@@ -26,19 +26,19 @@ python validate_independent.py     # validate against independent human labels
 1. The Action Logging System records every trainee action into a database.
    No rules are involved in capture or storage.
 2. The rules are used ONLY ONCE, as weak supervision, to label the training
-   runs. They are then discarded — they are not in the model or the deployed
+   runs. They are then discarded; they are not in the model or the deployed
    system.
 3. The Transformer learns ritual correctness from the action SEQUENCES.
-4. It is validated against an INDEPENDENT, human-labeled set the rules never
+4. It is validated against an INDEPENDENT, human-labeled set of rules never
    touched (umrah_validation_runs.csv). Agreement there proves it detects
    errors WITHOUT the rules.
 5. Deployed system: Action Logger -> Database -> Transformer -> feedback. No rules.
 
 ## Honest note
 - "Remove the rules" means: rules are gone from the system and the detection
-  path. They are used once as weak supervision for training labels — a standard,
+  path. They are used once as weak supervision for training labels a standard,
   citable method. To make this fully rule-free, replace the human_judge() labels
   in validate_independent.py with REAL human annotations (the runs are exported
   to umrah_validation_runs.csv for hand-labeling).
 - The Transformer replaces the RULES (the judging step). The logging system and
-  feedback remain — a model cannot capture actions or deliver messages itself.
+  feedback remain  a model cannot capture actions or deliver messages itself.
