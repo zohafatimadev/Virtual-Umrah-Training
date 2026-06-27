@@ -1,0 +1,3 @@
+Model,Accuracy,Precision,Recall,F1,TrainTime_s
+LogReg (bag-of-actions),1.0,1.0,1.0,1.0,0.01
+RandomForest (bag-of-actions),1.0,1.0,1.0,1.0,0.127
